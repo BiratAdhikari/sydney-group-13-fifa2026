@@ -4,10 +4,10 @@
 This repository contains the code, data, and documentation for Objective 1 of the FIFA World Cup 2026 data analytics project. Our team is investigating four distinct analytic questions using data sourced from FIFA, FBref, and The Stats Don't Lie.
 
 ## Team Members
-* [Member 1 Name](GitHub Profile Link) - Task 1
-* [Member 2 Name](GitHub Profile Link) - Task 2
-* [Member 3 Name](GitHub Profile Link) - Task 3
-* [Reviewer Name] (GitHub Profile Link) - Task 4 & Lead PR Reviewer
+* Birat Adhikari
+* Hemanta Adhikari
+* John Karki
+* Muhammad Hussnain
 
 ---
 
