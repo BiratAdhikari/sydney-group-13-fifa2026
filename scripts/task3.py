@@ -12,8 +12,10 @@
 import os
 import sys
 
-# Add project root directory to sys.path for modular imports
-sys.path.append(os.path.abspath("."))
+# Add the project root directory to sys.path for modular imports and paths.
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
 
 import pandas as pd
 from src.task3.data_wrangling import data_wrangling
@@ -27,22 +29,28 @@ def main():
     # 0. CONFIGURATION & FILE PATHS
     # -------------------------------------------------------------------------
     # Source: https://fbref.com/en/comps/1/stats/World-Cup-Stats
-    PLAYING_TIME_DATA = "data/raw/task3/PLAYING-TIME-DATA.csv"
+    PLAYING_TIME_DATA = os.path.join(
+        PROJECT_ROOT, "data", "raw", "task3", "PLAYING-TIME-DATA.csv"
+    )
     
     # Source: https://fbref.com/en/comps/1/misc/World-Cup-Stats
-    FOUL_DATA = "data/raw/task3/FOUL-DATA.csv"
+    FOUL_DATA = os.path.join(
+        PROJECT_ROOT, "data", "raw", "task3", "FOUL-DATA.csv"
+    )
     
     # Processed data output
-    PROCESSED_CSV = "data/processed/task3/processed3.csv"
+    PROCESSED_CSV = os.path.join(
+        PROJECT_ROOT, "data", "processed", "task3", "processed3.csv"
+    )
 
     # Exported visual artifact paths
-    HISTOGRAM_FILE = "figures/task3/histogram.png"
-    BOXPLOT_FILE = "figures/task3/boxplot.png"
-    TABLE_FILE = "figures/task3/t_table.png"
+    HISTOGRAM_FILE = os.path.join(PROJECT_ROOT, "figures", "task3", "histogram.png")
+    BOXPLOT_FILE = os.path.join(PROJECT_ROOT, "figures", "task3", "boxplot.png")
+    TABLE_FILE = os.path.join(PROJECT_ROOT, "figures", "task3", "t_table.png")
 
     # Ensure required target directories exist prior to file writes
-    os.makedirs("data/processed/task3", exist_ok=True)
-    os.makedirs("figures/task3", exist_ok=True)
+    os.makedirs(os.path.dirname(PROCESSED_CSV), exist_ok=True)
+    os.makedirs(os.path.dirname(HISTOGRAM_FILE), exist_ok=True)
 
     # -------------------------------------------------------------------------
     # 1. DATA WRANGLING
