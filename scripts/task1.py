@@ -35,6 +35,7 @@ RAW_FILE = os.path.join(
     PROJECT_ROOT,
     "data",
     "raw",
+    "task1",
     "raw1.csv"
 )
 
@@ -42,6 +43,7 @@ FILTERED_FILE = os.path.join(
     PROJECT_ROOT,
     "data",
     "processed",
+    "task1",
     "processed1.csv"
 )
 
@@ -85,7 +87,8 @@ def main():
         os.path.join(
             PROJECT_ROOT,
             "data",
-            "processed"
+            "processed",
+            "task1"
         ),
         exist_ok=True
     )
@@ -171,6 +174,21 @@ def main():
         "w",
         encoding="utf-8"
     ) as file:
+        
+        file.write(
+            "<!--\n"
+            "==============================================================================\n"
+            "HIT137 Assessment 2 - Question 1\n"
+            "Student Name : Hemanta Adhikari\n"
+            "Student ID   : s403355\n\n"
+            "Topic        : Shots/90 Analysis - Attacking Players\n"
+            "               Under 25 vs. Age 28+\n"
+            "               World Cup 2026 Attacking Shooting Analysis\n\n"
+            "Data Source  : FBref 2026 World Cup Player Shooting Statistics\n"
+            "Data Source Link  : https://fbref.com/en/comps/1/shooting/World-Cup-Stats\n"
+            "==============================================================================\n"
+            "-->\n\n"
+        )
 
         file.write("# Question 1 Results\n\n")
 
@@ -187,7 +205,7 @@ def main():
             "shooting statistics obtained from FBref.\n\n"
         )
 
-        file.write("- Raw dataset: `data/raw/raw1.csv`\n")
+        file.write("- Raw dataset: `data/raw/task1/raw1.csv`\n")
         file.write(
             f"- Original records: **{wrangled['original_records']}**\n"
         )
@@ -384,13 +402,30 @@ def main():
         file.write(
             "- t-Distribution: `figures/task1/t_distribution.png`\n\n"
         )
+        
+        file.write("## 9. How to Run\n\n")
+        file.write(
+            "From the project root, run the script directly:\n\n"
+        )
+        file.write("```bash\n")
+        file.write("python scripts/task1.py\n")
+        file.write("```\n\n")
+        file.write(
+            "Or from inside the `scripts/` folder:\n\n"
+        )
+        file.write("```bash\n")
+        file.write("cd scripts\n")
+        file.write("python task1.py\n")
+        file.write("```\n\n")
 
-        file.write("## 9. Data Source\n\n")
+
+        file.write("## 10. Data Source\n\n")
         file.write(
             "FBref.com (Sports Reference), FIFA World Cup "
             "Standard Shooting statistics.\n\n"
         )
         file.write("https://fbref.com/en/\n")
+        
 
     print("\nResults saved to:")
     print(RESULTS_FILE)
