@@ -1,6 +1,6 @@
 # Sydney Group 13 - FIFA World Cup 2026 Analytics
 
-This repository contains our **HIT137 Objective 1** FIFA World Cup 2026 data analysis project. The project investigates four analytical questions using football data from **FIFA, FBref, and The Stats Don't Lie**.
+This repository contains our **HIT140 Objective 1** FIFA World Cup 2026 data analysis project. The project investigates four analytical questions using football data from **FIFA, FBref, and The Stats Don't Lie**.
 
 ## Team Members and Analytical Questions
 

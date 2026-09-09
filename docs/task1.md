@@ -1,6 +1,6 @@
 <!--
 ==============================================================================
-HIT137 Assessment 2 - Question 1
+HIT140 Assessment 2 - Question 1
 Student Name : Hemanta Adhikari
 Student ID   : s403355
 

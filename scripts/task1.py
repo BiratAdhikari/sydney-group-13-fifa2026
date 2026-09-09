@@ -1,5 +1,5 @@
 # ==============================================================================
-# HIT137 Assessment 2 - Question 1
+# HIT140 Assessment 2 - Question 1
 # Student Name : Hemanta Adhikari
 # Student ID   : s403355
 #
@@ -178,7 +178,7 @@ def main():
         file.write(
             "<!--\n"
             "==============================================================================\n"
-            "HIT137 Assessment 2 - Question 1\n"
+            "HIT140 Assessment 2 - Question 1\n"
             "Student Name : Hemanta Adhikari\n"
             "Student ID   : s403355\n\n"
             "Topic        : Shots/90 Analysis - Attacking Players\n"

@@ -1,5 +1,5 @@
 # ==============================================================================
-# HIT137 Assessment 2 - Question 3
+# HIT140 Assessment 2 - Question 3
 # Student Name : John Karki
 # Student ID   : s403518
 #
