@@ -1,3 +1,18 @@
+<!--
+==============================================================================
+HIT137 Assessment 2 - Question 1
+Student Name : Hemanta Adhikari
+Student ID   : s403355
+
+Topic        : Shots/90 Analysis - Attacking Players
+               Under 25 vs. Age 28+
+               World Cup 2026 Attacking Shooting Analysis
+
+Data Source  : FBref 2026 World Cup Player Shooting Statistics
+Data Source Link  : https://fbref.com/en/comps/1/shooting/World-Cup-Stats
+==============================================================================
+-->
+
 # Question 1 Results
 
 ## Analytical Question
@@ -8,7 +23,7 @@
 
 The analysis uses FIFA World Cup 2026 player shooting statistics obtained from FBref.
 
-- Raw dataset: `data/raw/raw1.csv`
+- Raw dataset: `data/raw/task1/raw1.csv`
 - Original records: **1039**
 - Records removed during cleaning: **0**
 - Attacking players identified: **275**
@@ -111,7 +126,22 @@ Because the p-value is greater than 0.05, the null hypothesis is not rejected. T
 - Boxplot: `figures/task1/boxplot.png`
 - t-Distribution: `figures/task1/t_distribution.png`
 
-## 9. Data Source
+## 9. How to Run
+
+From the project root, run the script directly:
+
+```bash
+python scripts/task1.py
+```
+
+Or from inside the `scripts/` folder:
+
+```bash
+cd scripts
+python task1.py
+```
+
+## 10. Data Source
 
 FBref.com (Sports Reference), FIFA World Cup Standard Shooting statistics.
 
