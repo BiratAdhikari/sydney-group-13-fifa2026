@@ -61,7 +61,9 @@ def main():
     # -------------------------------------------------------------------------
     # 2. DATA PREPARATION & GROUPING
     # -------------------------------------------------------------------------
-    df, starters, non_starters = data_preparation(df_filtered, PROCESSED_CSV)
+    df, starters, non_starters = data_preparation(
+        df_filtered, PROCESSED_CSV, sample_size=35, random_state=42
+    )
 
     # -------------------------------------------------------------------------
     # 3. DESCRIPTIVE STATISTICS & VISUALIZATIONS
@@ -92,7 +94,7 @@ def main():
     print("ALL TASKS COMPLETED SUCCESSFULLY")
     print("="*70)
     print("1. Data Wrangling: Merged datasets & filtered out low-sample records (<1.0 90s).")
-    print("2. Data Preparation: Saved processed file to data/processed/task3/processed3.csv")
+    print(f"2. Data Preparation: Saved {len(df)} records to data/processed/task3/processed3.csv")
     print("3. Visualization: Saved histogram.png, boxplot.png, and t_table.png")
     print("4. Descriptive Analysis: Calculated Means, Std Devs, and 95% CIs")
     print("5. Inferential Analysis: Performed Welch's Two-Sample t-test")
@@ -103,12 +105,19 @@ def main():
     print("Question: Do players who started at least 50% of their team's matches")
     print("          commit significantly more Fouls/90 than non-starters?")
     print("-" * 70)
-    print("ANSWER: NO, it is the opposite.")
-    print("\nPlayers who started FEWER than 50% of matches (non-starters) committed")
-    print("significantly MORE fouls per 90 minutes (Mean = 1.424)")
-    print("than starters (Mean = 1.000).")
+    starter_mean = starters["fouls_per_90"].mean()
+    non_starter_mean = non_starters["fouls_per_90"].mean()
+    direction = "more" if starter_mean > non_starter_mean else "fewer"
+    print(
+        f"ANSWER: Starters committed {direction} fouls per 90 minutes "
+        f"(Starters = {starter_mean:.3f}; Non-Starters = {non_starter_mean:.3f})."
+    )
     print(f"\nStatistical Significance: t = {t_stat_val:.3f}, p = {p_val_val:.4f}")
-    print("Because p < 0.05, we reject H0. Non-starters commit significantly more fouls/90.")
+    print(
+        "Because p < 0.05, we reject H0."
+        if p_val_val < ALPHA
+        else "Because p >= 0.05, we fail to reject H0."
+    )
     print("="*70 + "\n")
 
 if __name__ == "__main__":
